@@ -1,3 +1,5 @@
+import 'package:bourse_ui_c4/screens/tabs/Accounts.dart';
+import 'package:bourse_ui_c4/screens/tabs/genel_bakis.dart';
 import 'package:flutter/material.dart';
 
 import 'package:shifting_tabbar/shifting_tabbar.dart';
@@ -12,6 +14,16 @@ class StockPage extends StatefulWidget {
 class _StockPageState extends State<StockPage> {
   @override
   Widget build(BuildContext context) {
+    final pages = [
+      GenelBakis(),
+      GenelBakis(),
+      GenelBakis(),
+      GenelBakis(),
+      GenelBakis(),
+    ];
+    double sizeWidth = MediaQuery.of(context).size.width;
+    double sizeheigh = MediaQuery.of(context).size.height;
+    TabController? _controller;
     return SafeArea(
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
@@ -33,11 +45,11 @@ class _StockPageState extends State<StockPage> {
                         color: Colors.white,
                         size: 30,
                       ),
-                      text: 'Genel \nBakış',
+                      text: 'Genel Bakış',
                     ),
                     ShiftingTab(
                       icon: const Icon(
-                        Icons.directions_bike,
+                        Icons.attach_money,
                         color: Colors.white,
                         size: 30,
                       ),
@@ -45,7 +57,7 @@ class _StockPageState extends State<StockPage> {
                     ),
                     ShiftingTab(
                       icon: const Icon(
-                        Icons.directions_car,
+                        Icons.money_off_rounded,
                         color: Colors.white,
                         size: 30,
                       ),
@@ -53,7 +65,7 @@ class _StockPageState extends State<StockPage> {
                     ),
                     ShiftingTab(
                       icon: const Icon(
-                        Icons.directions_transit,
+                        Icons.money,
                         color: Colors.white,
                         size: 25,
                       ),
@@ -61,7 +73,7 @@ class _StockPageState extends State<StockPage> {
                     ),
                     ShiftingTab(
                       icon: const Icon(
-                        Icons.directions_boat,
+                        Icons.settings,
                         color: Colors.white,
                         size: 30,
                       ),
@@ -69,18 +81,7 @@ class _StockPageState extends State<StockPage> {
                     ),
                   ],
                 ),
-                // Other parts of the app are exacly same as default TabBar widget
-                body: const TabBarView(
-                  children: <Widget>[
-                    Icon(
-                      Icons.graphic_eq,
-                    ),
-                    Icon(Icons.directions_bike),
-                    Icon(Icons.directions_car),
-                    Icon(Icons.directions_transit),
-                    Icon(Icons.directions_boat),
-                  ],
-                ),
+                body: TabBarView(controller: _controller, children: pages),
               ));
         },
       ),

@@ -35,6 +35,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   shifting_tabbar: ^1.0.2
+  animations: ^2.0.2
+  charts_flutter: ^0.12.0
+  
+  fl_chart: ^0.40.6
+  animate_do: ^2.0.0
+  pie_chart: ^5.1.0
+ 
 
 dev_dependencies:
   flutter_test:
