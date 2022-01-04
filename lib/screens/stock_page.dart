@@ -1,5 +1,6 @@
 import 'package:bourse_ui_c4/screens/tabs/Accounts.dart';
 import 'package:bourse_ui_c4/screens/tabs/genel_bakis.dart';
+import 'package:bourse_ui_c4/screens/tabs/settings.dart';
 import 'package:flutter/material.dart';
 
 import 'package:shifting_tabbar/shifting_tabbar.dart';
@@ -16,10 +17,10 @@ class _StockPageState extends State<StockPage> {
   Widget build(BuildContext context) {
     final pages = [
       GenelBakis(),
+      AccountsPage(),
       GenelBakis(),
       GenelBakis(),
-      GenelBakis(),
-      GenelBakis(),
+      SettingsPage()
     ];
     double sizeWidth = MediaQuery.of(context).size.width;
     double sizeheigh = MediaQuery.of(context).size.height;

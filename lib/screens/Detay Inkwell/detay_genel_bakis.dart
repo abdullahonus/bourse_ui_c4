@@ -11,7 +11,7 @@ class TabPage extends StatefulWidget {
   _TabPageState createState() => _TabPageState();
 }
 
-bool _isLoaded = false;
+bool _isLoaded = true;
 
 class _TabPageState extends State<TabPage> {
   final int _currentIndex = 0;
@@ -21,7 +21,7 @@ class _TabPageState extends State<TabPage> {
     super.initState();
 
     // make _isLoaded true after 2 seconds
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 7000), () {
       setState(() {
         _isLoaded = true;
       });
@@ -47,7 +47,7 @@ class _TabPageState extends State<TabPage> {
       body: ListView(
         children: [
           FadeInUp(
-            duration: Duration(milliseconds: 2000),
+            duration: Duration(milliseconds: 3000),
             child: SizedBox(
               width: double.infinity,
               height: 250,
@@ -310,7 +310,7 @@ LineChartData mainData() {
       show: false,
     ),
     gridData: FlGridData(
-        show: true,
+        show: false,
         horizontalInterval: 1.6,
         getDrawingHorizontalLine: (value) {
           return FlLine(
