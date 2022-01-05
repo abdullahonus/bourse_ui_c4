@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                     alignment: Alignment.center,
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => StockPage(),
+                        builder: (context) => const StockPage(),
                       ));
                     },
                     icon: const Icon(

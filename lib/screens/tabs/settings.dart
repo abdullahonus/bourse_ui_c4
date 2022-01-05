@@ -1,9 +1,8 @@
 import 'package:bourse_ui_c4/screens/login_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SettingsPage extends StatefulWidget {
-  SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({Key? key}) : super(key: key);
 
   @override
   _SettingsPageState createState() => _SettingsPageState();
@@ -13,17 +12,16 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     double sizeWidth = MediaQuery.of(context).size.width;
-    double sizeheigh = MediaQuery.of(context).size.height;
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.grey[800],
+      backgroundColor: Colors.grey[850],
       body: ListView(
         children: [
           ElevatedButton(
               style: ElevatedButton.styleFrom(
                   primary: Colors.transparent, elevation: 0),
               onPressed: () {},
-              child: Container(
+              child: SizedBox(
                 width: sizeWidth * 1,
                 child: const Text(
                   "Manage Accounts",
@@ -36,7 +34,7 @@ class _SettingsPageState extends State<SettingsPage> {
               style: ElevatedButton.styleFrom(
                   primary: Colors.transparent, elevation: 0),
               onPressed: () {},
-              child: Container(
+              child: SizedBox(
                 width: sizeWidth * 1,
                 child: const Text(
                   "Tax Documents ",
@@ -62,7 +60,7 @@ class _SettingsPageState extends State<SettingsPage> {
               style: ElevatedButton.styleFrom(
                   primary: Colors.transparent, elevation: 0),
               onPressed: () {},
-              child: Container(
+              child: SizedBox(
                 width: sizeWidth * 1,
                 child: const Text(
                   "Notification",
@@ -70,12 +68,12 @@ class _SettingsPageState extends State<SettingsPage> {
                   textAlign: TextAlign.start,
                 ),
               )),
-          Divider(),
+          const Divider(),
           ElevatedButton(
               style: ElevatedButton.styleFrom(
                   primary: Colors.transparent, elevation: 0),
               onPressed: () {},
-              child: Container(
+              child: SizedBox(
                 width: sizeWidth * 1,
                 child: const Text(
                   "Personal Information",
@@ -83,12 +81,12 @@ class _SettingsPageState extends State<SettingsPage> {
                   textAlign: TextAlign.start,
                 ),
               )),
-          Divider(),
+        const  Divider(),
           ElevatedButton(
               style: ElevatedButton.styleFrom(
                   primary: Colors.transparent, elevation: 0),
               onPressed: () {},
-              child: Container(
+              child: SizedBox(
                 width: sizeWidth * 1,
                 child: const Text(
                   "Find ATM",
@@ -96,12 +94,12 @@ class _SettingsPageState extends State<SettingsPage> {
                   textAlign: TextAlign.start,
                 ),
               )),
-          Divider(),
+          const Divider(),
           ElevatedButton(
               style: ElevatedButton.styleFrom(
                   primary: Colors.transparent, elevation: 0),
               onPressed: () {},
-              child: Container(
+              child: SizedBox(
                 width: sizeWidth * 1,
                 child: const Text(
                   "Help",
@@ -109,17 +107,17 @@ class _SettingsPageState extends State<SettingsPage> {
                   textAlign: TextAlign.start,
                 ),
               )),
-          Divider(),
+          const Divider(),
           ElevatedButton(
               style: ElevatedButton.styleFrom(
                   primary: Colors.transparent, elevation: 0),
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => LoginPage(),
+                  builder: (context) => const LoginPage(),
                 ));
               },
               child: Container(
-                padding: EdgeInsets.all(100),
+                padding: const EdgeInsets.all(100),
                 width: sizeWidth * 1,
                 child: const Text(
                   "Log Out",
@@ -127,7 +125,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   textAlign: TextAlign.center,
                 ),
               )),
-          Divider(),
+          const Divider(),
         ],
       ),
     ));

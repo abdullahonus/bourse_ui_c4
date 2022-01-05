@@ -14,7 +14,6 @@ class TabPage extends StatefulWidget {
 bool _isLoaded = true;
 
 class _TabPageState extends State<TabPage> {
-  final int _currentIndex = 0;
 
   @override
   void initState() {

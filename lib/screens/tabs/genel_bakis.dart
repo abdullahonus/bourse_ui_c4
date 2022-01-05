@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors_in_immutables
 
-import 'dart:ui';
 
 import 'package:animations/animations.dart';
 import 'package:bourse_ui_c4/screens/Detay%20Inkwell/detay_genel_bakis.dart';

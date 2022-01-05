@@ -1,19 +1,17 @@
-import 'package:bourse_ui_c4/screens/tabs/settings.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/login_page.dart';
-import 'screens/stock_page.dart';
-import 'screens/tabs/Accounts.dart';
-import 'screens/tabs/asd.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Material App',
-        home: StockPage());
+        title: 'Countrol4',
+        home: LoginPage());
   }
 }

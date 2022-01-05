@@ -1,20 +1,16 @@
-// ignore_for_file: prefer_const_constructors, file_names
-
 import 'package:animate_do/animate_do.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-class StocksPage extends StatefulWidget {
-  const StocksPage({Key? key}) : super(key: key);
+class Bill extends StatefulWidget {
+  const Bill({Key? key}) : super(key: key);
 
   @override
-  _StocksPageState createState() => _StocksPageState();
+  _BillState createState() => _BillState();
 }
 
-class _StocksPageState extends State<StocksPage> {
-  // crate list of spots for the graph by monthly, yearly of Google Stocks
-  // ignore: prefer_final_fields
-  List<FlSpot> _daylySpots = [
+class _BillState extends State<Bill> {
+  final List<FlSpot> _daylySpots = const [
     FlSpot(0, 20.0),
     FlSpot(1, 20.0),
     FlSpot(2, 30.0),
@@ -26,45 +22,25 @@ class _StocksPageState extends State<StocksPage> {
     FlSpot(8, 60.0),
     FlSpot(9, 70.0),
     FlSpot(10, 50.0),
-    FlSpot(11, 150.0),
+    FlSpot(11, 100.0),
     FlSpot(12, 70.0),
     FlSpot(13, 80.0),
     FlSpot(14, 60.0),
     FlSpot(15, 70.0),
-    FlSpot(16, 60.0),
-    FlSpot(17, 80.0),
-    FlSpot(18, 110.0),
-    FlSpot(19, 130.0),
-    FlSpot(20, 100.0),
-    FlSpot(21, 130.0),
-    FlSpot(22, 160.0),
-    FlSpot(23, 190.0),
-    FlSpot(24, 150.0),
-    FlSpot(25, 170.0),
-    FlSpot(26, 180.0),
-    FlSpot(27, 140.0),
-    FlSpot(28, 150.0),
-    FlSpot(29, 150.0),
-    FlSpot(30, 130.0)
+    FlSpot(25, 10.0),
+    FlSpot(26, 50.0),
   ];
 
   // ignore: prefer_final_fields
-  List<FlSpot> _monthlySpots = [
+  List<FlSpot> _monthlySpots = const [
     FlSpot(0, 110.0),
     FlSpot(1, 110.0),
-    FlSpot(2, 130.0),
-    FlSpot(3, 100.0),
-    FlSpot(4, 130.0),
     FlSpot(5, 160.0),
     FlSpot(6, 190.0),
     FlSpot(7, 150.0),
-    FlSpot(8, 170.0),
-    FlSpot(9, 180.0),
-    FlSpot(10, 140.0),
-    FlSpot(11, 150.0),
   ];
 
-  final int _currentIndex = 0;
+  final int _currentIndex = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -75,14 +51,14 @@ class _StocksPageState extends State<StocksPage> {
         body: Column(mainAxisAlignment: MainAxisAlignment.start, children: <
             Widget>[
           FadeInUp(
-            duration: Duration(milliseconds: 1000),
-            from: 60,
+            duration: const Duration(milliseconds: 1000),
+            from: 80,
             child: SizedBox(
                 height: MediaQuery.of(context).size.height * 0.3,
                 child: LineChart(
                   mainData(),
                   swapAnimationCurve: Curves.easeInOutCubic,
-                  swapAnimationDuration: Duration(milliseconds: 2000),
+                  swapAnimationDuration: const Duration(milliseconds: 2000),
                 )),
           ),
           FadeInUp(
@@ -95,116 +71,20 @@ class _StocksPageState extends State<StocksPage> {
                       margin: const EdgeInsets.all(9),
                       width: sizeWidth * 0.012,
                       height: sizeheigh * 0.06,
-                      color: Colors.green[500],
+                      color: Colors.orange[500],
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
                         Text(
-                          "For Home",
+                          "RedPay Credit",
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w400,
                               color: Colors.white),
                         ),
                         Text(
-                          "**** **** 1234",
-                          style: TextStyle(fontSize: 20, color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      "\$8.571,49",
-                      style:
-                          TextStyle(fontSize: 25, color: Colors.grey.shade300),
-                    ),
-                    const Icon(
-                      Icons.arrow_forward_ios_outlined,
-                      color: Colors.white,
-                    ),
-                  ],
-                ),
-                Divider(
-                  indent: 50,
-                  endIndent: 50,
-                  thickness: 1,
-                  color: Colors.black.withOpacity(0.15),
-                ),
-              ],
-            ),
-          ),
-          FadeInUp(
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.all(9),
-                      width: sizeWidth * 0.012,
-                      height: sizeheigh * 0.06,
-                      color: Colors.green[800],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          "Deposit",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white),
-                        ),
-                        Text(
-                          "**** **** 5678",
-                          style: TextStyle(fontSize: 20, color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      "\$4.878,12",
-                      style:
-                          TextStyle(fontSize: 25, color: Colors.grey.shade300),
-                    ),
-                    const Icon(
-                      Icons.arrow_forward_ios_outlined,
-                      color: Colors.white,
-                    ),
-                  ],
-                ),
-                Divider(
-                  indent: 50,
-                  endIndent: 50,
-                  thickness: 1,
-                  color: Colors.black.withOpacity(0.15),
-                ),
-              ],
-            ),
-          ),
-          FadeInUp(
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.all(9),
-                      width: sizeWidth * 0.012,
-                      height: sizeheigh * 0.06,
-                      color: Colors.green[900],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          "Holiday",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white),
-                        ),
-                        Text(
-                          "**** **** 8778",
+                          "**** **** 1212",
                           style: TextStyle(fontSize: 20, color: Colors.grey),
                         ),
                       ],
@@ -229,13 +109,157 @@ class _StocksPageState extends State<StocksPage> {
               ],
             ),
           ),
+          FadeInUp(
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.all(9),
+                      width: sizeWidth * 0.012,
+                      height: sizeheigh * 0.06,
+                      color: Colors.red[500],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Rent",
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          "**** **** 1818",
+                          style: TextStyle(fontSize: 20, color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      "\$9.571,49",
+                      style:
+                          TextStyle(fontSize: 25, color: Colors.grey.shade300),
+                    ),
+                    const Icon(
+                      Icons.arrow_forward_ios_outlined,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+                Divider(
+                  indent: 50,
+                  endIndent: 50,
+                  thickness: 1,
+                  color: Colors.black.withOpacity(0.15),
+                ),
+              ],
+            ),
+          ),
+          FadeInUp(
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.all(9),
+                      width: sizeWidth * 0.012,
+                      height: sizeheigh * 0.06,
+                      color: Colors.red[900],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Tab Fine Credit",
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          "**** **** 2589",
+                          style: TextStyle(fontSize: 20, color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      "\$571,49",
+                      style:
+                          TextStyle(fontSize: 25, color: Colors.grey.shade300),
+                    ),
+                    const Icon(
+                      Icons.arrow_forward_ios_outlined,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+                Divider(
+                  indent: 50,
+                  endIndent: 50,
+                  thickness: 1,
+                  color: Colors.black.withOpacity(0.15),
+                ),
+              ],
+            ),
+          ),
+          FadeInUp(
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.all(9),
+                      width: sizeWidth * 0.012,
+                      height: sizeheigh * 0.06,
+                      color: Colors.orange[900],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "ABC Loans",
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          "**** **** 5678",
+                          style: TextStyle(fontSize: 20, color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      "\$8.571,49",
+                      style:
+                          TextStyle(fontSize: 25, color: Colors.grey.shade300),
+                    ),
+                    const Icon(
+                      Icons.arrow_forward_ios_outlined,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+                Divider(
+                  indent: 50,
+                  endIndent: 50,
+                  thickness: 1,
+                  color: Colors.black.withOpacity(0.15),
+                ),
+              ],
+            ),
+          ),
         ]));
   }
 
   // Charts Data
   List<Color> gradientColors = [
-    Colors.green,
-    Colors.green.shade900,
+    Colors.orange.shade400,
+    Colors.red.shade900,
   ];
 
   LineChartData mainData() {
@@ -244,9 +268,9 @@ class _StocksPageState extends State<StocksPage> {
         show: false,
       ),
       gridData: FlGridData(
-          show: false, horizontalInterval: 1.6, drawVerticalLine: false),
+          show: false, horizontalInterval: 1.6, drawVerticalLine: true),
       titlesData: FlTitlesData(
-        show: false,
+        show: true,
         rightTitles: SideTitles(showTitles: false),
         topTitles: SideTitles(showTitles: false),
         bottomTitles: SideTitles(
@@ -309,16 +333,6 @@ class _StocksPageState extends State<StocksPage> {
           },
         ),
       ),
-      minX: 0,
-      maxX: _currentIndex == 0
-          ? _daylySpots.length - 1.toDouble()
-          : _currentIndex == 1
-              ? _monthlySpots.length - 1.toDouble()
-              : _currentIndex == 2
-                  ? _daylySpots.length - 20.toDouble()
-                  : _daylySpots.length.toDouble(),
-      minY: 0,
-      maxY: 200,
       lineTouchData: LineTouchData(
         getTouchedSpotIndicator:
             (LineChartBarData barData, List<int> spotIndexes) {
@@ -330,7 +344,7 @@ class _StocksPageState extends State<StocksPage> {
                 dashArray: [3, 3],
               ),
               FlDotData(
-                show: false,
+                show: true,
                 getDotPainter: (spot, percent, barData, index) =>
                     FlDotCirclePainter(
                   radius: 8,
@@ -338,7 +352,7 @@ class _StocksPageState extends State<StocksPage> {
                     Colors.black,
                     Colors.black,
                   ][index],
-                  strokeWidth: 2,
+                  strokeWidth: 3,
                   strokeColor: Colors.black,
                 ),
               ),
@@ -348,7 +362,7 @@ class _StocksPageState extends State<StocksPage> {
       ),
       lineBarsData: [
         LineChartBarData(
-          spots: _currentIndex == 0
+          spots: _currentIndex == 2
               ? _daylySpots
               : _currentIndex == 1
                   ? _monthlySpots
@@ -361,11 +375,11 @@ class _StocksPageState extends State<StocksPage> {
           ),
           belowBarData: BarAreaData(
               show: true,
-              gradientFrom: Offset(1, 5),
-              gradientTo: Offset(0, 5),
+              gradientFrom: const Offset(1, 0),
+              gradientTo: const Offset(0, 3),
               colors: [
-                Colors.green.withOpacity(0.1),
-                Colors.green.shade800.withOpacity(0),
+                Colors.red.withOpacity(0.1),
+                Colors.red.shade800.withOpacity(0),
               ]),
         )
       ],

@@ -1,4 +1,6 @@
-import 'package:bourse_ui_c4/screens/tabs/Accounts.dart';
+import 'package:bourse_ui_c4/screens/tabs/accounts.dart';
+import 'package:bourse_ui_c4/screens/tabs/bill.dart';
+import 'package:bourse_ui_c4/screens/tabs/budgets.dart';
 import 'package:bourse_ui_c4/screens/tabs/genel_bakis.dart';
 import 'package:bourse_ui_c4/screens/tabs/settings.dart';
 import 'package:flutter/material.dart';
@@ -6,24 +8,26 @@ import 'package:flutter/material.dart';
 import 'package:shifting_tabbar/shifting_tabbar.dart';
 
 class StockPage extends StatefulWidget {
-  StockPage({Key? key}) : super(key: key);
+  const StockPage({Key? key}) : super(key: key);
 
   @override
   _StockPageState createState() => _StockPageState();
 }
 
 class _StockPageState extends State<StockPage> {
+////////////////////////////////////////////
+///follor For more ig: @Countrol4offical
+///@countrolfour@gmail.com
+////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
     final pages = [
       GenelBakis(),
-      AccountsPage(),
-      GenelBakis(),
-      GenelBakis(),
-      SettingsPage()
+      const StocksPage(),
+      const Bill(),
+      const BudgetsPage(),
+      const SettingsPage()
     ];
-    double sizeWidth = MediaQuery.of(context).size.width;
-    double sizeheigh = MediaQuery.of(context).size.height;
     TabController? _controller;
     return SafeArea(
       child: LayoutBuilder(
