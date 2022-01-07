@@ -381,8 +381,8 @@ class _BudgetsPageState extends State<BudgetsPage> {
               gradientFrom: const Offset(1, 0),
               gradientTo: const Offset(0, 3),
               colors: [
-                Colors.red.withOpacity(0.1),
-                Colors.red.shade800.withOpacity(0),
+                Colors.purple.withOpacity(0.3),
+                Colors.white.withOpacity(0),
               ]),
         )
       ],
