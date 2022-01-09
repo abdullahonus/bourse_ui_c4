@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors_in_immutables
 
-
 import 'package:animations/animations.dart';
 import 'package:bourse_ui_c4/screens/Detay%20Inkwell/detay_genel_bakis.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +26,6 @@ class _GenelBakisState extends State<GenelBakis> {
           Container(
             padding: const EdgeInsets.all(8),
             margin: const EdgeInsets.all(8),
-            height: sizeheigh * 0.15,
             width: sizeWidth * 1,
             decoration: BoxDecoration(
                 color: Colors.grey.shade800,
@@ -203,11 +201,6 @@ class _GenelBakisState extends State<GenelBakis> {
                   thickness: 1,
                   color: Colors.black.withOpacity(0.15),
                 ),
-                Container(
-                  width: sizeWidth * 0.5,
-                  height: sizeheigh * 0.4,
-                  decoration: const BoxDecoration(color: Colors.black),
-                )
               ],
             ),
           ),
